@@ -1,0 +1,39 @@
+--- a/arch/mips/ath79/Kconfig	2019-03-12 23:11:08.662649060 +0800
++++ b/arch/mips/ath79/Kconfig	2019-03-12 23:12:14.399832794 +0800
+@@ -1237,6 +1237,16 @@
+ 	select ATH79_DEV_M25P80
+ 	select ATH79_DEV_USB
+ 
++config ATH79_MACH_TS_D084
++	bool "PISEN TS-D084 support"
++	select SOC_AR933X
++	select ATH79_DEV_ETH
++	select ATH79_DEV_GPIO_BUTTONS
++	select ATH79_DEV_LEDS_GPIO
++	select ATH79_DEV_M25P80
++	select ATH79_DEV_USB
++	select ATH79_DEV_WMAC
++
+ config ATH79_MACH_TEW_632BRP
+ 	bool "TRENDnet TEW-632BRP support"
+ 	select SOC_AR913X
+--- a/arch/mips/ath79/Makefile	2019-03-12 23:15:42.824759237 +0800
++++ b/arch/mips/ath79/Makefile	2019-03-12 23:16:20.946653039 +0800
+@@ -148,6 +148,7 @@
+ obj-$(CONFIG_ATH79_MACH_TL_WR2543N)	+= mach-tl-wr2543n.o
+ obj-$(CONFIG_ATH79_MACH_TL_WR703N)	+= mach-tl-wr703n.o
+ obj-$(CONFIG_ATH79_MACH_TL_WR720N_V3)	+= mach-tl-wr720n-v3.o
++obj-$(CONFIG_ATH79_MACH_TS_D084)	+= mach-ts-d084.o
+ obj-$(CONFIG_ATH79_MACH_TUBE2H)		+= mach-tube2h.o
+ obj-$(CONFIG_ATH79_MACH_UBNT)		+= mach-ubnt.o
+ obj-$(CONFIG_ATH79_MACH_UBNT_XM)	+= mach-ubnt-xm.o
+--- a/arch/mips/ath79/machtypes.h	2019-03-12 23:17:09.880908906 +0800
++++ b/arch/mips/ath79/machtypes.h	2019-03-12 23:18:13.011555597 +0800
+@@ -180,6 +180,7 @@
+ 	ATH79_MACH_TL_WR941ND,		/* TP-LINK TL-WR941ND */
+ 	ATH79_MACH_TL_WR941ND_V5,	/* TP-LINK TL-WR941ND v5 */
+ 	ATH79_MACH_TL_WR941ND_V6,	/* TP-LINK TL-WR941ND v6 */
++	ATH79_MACH_TS_D084,		/* PISEN TS-D084 */
+ 	ATH79_MACH_TUBE2H,		/* Alfa Network Tube2H */
+ 	ATH79_MACH_UBNT_AIRGW,		/* Ubiquiti AirGateway */
+ 	ATH79_MACH_UBNT_AIRROUTER,	/* Ubiquiti AirRouter */

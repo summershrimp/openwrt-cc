@@ -370,6 +370,9 @@ get_status_led() {
 	wlr8100)
 		status_led="sitecom:amber:status"
 		;;
+	ts-d084)
+		status_led="ts-d084:blue:system"
+		;;
 	esac
 }
 

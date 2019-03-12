@@ -345,6 +345,15 @@ define Device/gl-inet-6416A-v1
 endef
 TARGET_DEVICES += gl-inet-6408A-v1 gl-inet-6416A-v1
 
+define Device/ts-d084
+  $(Device/tplink-8mlzma)
+  BOARDNAME := TS-D084
+  DEVICE_PROFILE := TSD084
+  TPLINK_HWID := 0x07030101
+  CONSOLE := ttyATH0,115200
+endef
+TARGET_DEVICES += ts-d084
+
 define Device/mc-mac1200r
     $(Device/tplink-8mlzma)
     BOARDNAME := MC-MAC1200R
